@@ -7,9 +7,6 @@ import {
   CheckCircleIcon,
   ExclamationTriangleIcon 
 } from '@heroicons/react/24/outline';
-import { Button } from '../ui/button';
-import { Input } from '../ui/input';
-import { Textarea } from '../ui/textarea';
 import { personalInfo } from '../../content/general';
 import { availability } from '../../content/availability';
 
