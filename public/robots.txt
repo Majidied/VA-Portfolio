@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+
+# Sitemap
+Sitemap: https://yoursite.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
