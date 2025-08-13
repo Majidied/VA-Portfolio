@@ -11,7 +11,6 @@ import FAQSection from './components/sections/FAQSection';
 import ContactSection from './components/sections/ContactSection';
 import Meta from './seo/Meta';
 import { baseStructuredData } from './seo/config';
-import { professionalServiceSchema, personSchema, websiteSchema } from './seo/schema';
 
 function App() {
   return (
