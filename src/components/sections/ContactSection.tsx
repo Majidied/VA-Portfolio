@@ -340,7 +340,7 @@ export default function ContactSection() {
               </h3>
               <div className="space-y-2">
                 <a
-                  href="https://calendly.com/mohammed-majidi"
+                  href={availability.preferredContact[1].value}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 px-4 rounded-lg font-medium transition-colors duration-200"

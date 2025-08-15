@@ -2,7 +2,7 @@ export const packages = [
   {
     id: "essential",
     name: "Essential VA Services",
-    price: 25,
+    price: 5,
     period: "per hour",
     description: "Core administrative services with reliable support.",
     popular: false,
@@ -29,7 +29,7 @@ export const packages = [
   {
     id: "optimized",
     name: "Enhanced VA Services",
-    price: 35,
+    price: 10,
     period: "per hour",
     description: "Core VA services plus custom systems and optimization.",
     popular: true,
@@ -55,7 +55,7 @@ export const packages = [
   {
     id: "premium",
     name: "Premium Development & VA",
-    price: 50,
+    price: 15,
     period: "per hour",
     description: "Complete VA support with advanced custom development.",
     popular: false,

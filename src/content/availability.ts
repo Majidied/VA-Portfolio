@@ -1,6 +1,6 @@
 export const availability = {
   status: "Available for New Projects",
-  nextAvailable: "January 2025",
+  nextAvailable: new Date().toLocaleString('default', { month: 'long', year: 'numeric' }),
   currentCapacity: "2 slots remaining",
   workingHours: {
     timezone: "UTC+0",
@@ -22,12 +22,12 @@ export const availability = {
   preferredContact: [
     {
       method: "Email",
-      value: "mohammed@example.com", // Replace with actual email
+      value: "mohammedmajidi321@gmail.com", // Replace with actual email
       primary: true,
     },
     {
       method: "Calendar Booking",
-      value: "https://calendly.com/mohammed-majidi", // Replace with actual booking link
+      value: "https://calendly.com/majidimajidi2003/30-minute-meeting", // Replace with actual booking link
       primary: false,
     },
   ],

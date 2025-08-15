@@ -65,6 +65,11 @@ input, textarea, select {
 .focus-ring { @apply outline-none ring-2 ring-indigo-500 dark:ring-indigo-400 ring-offset-2 ring-offset-white dark:ring-offset-gray-950; }
 .theme-transition * { @apply transition-colors duration-200; }
 
+/* Custom gradients for loading component */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
 /* Scrollbars */
 * { scrollbar-width: thin; scrollbar-color: rgb(148 163 184) transparent; }
 .dark * { scrollbar-color: rgb(100 116 139) transparent; }

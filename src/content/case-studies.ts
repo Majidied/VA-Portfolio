@@ -19,9 +19,7 @@ export const caseStudies = [
       timeSaved: "6 hours/week",
       efficiency: "75%",
       satisfaction: "100%"
-    },
-    testimonial: "Mohammed transformed my chaotic inbox into a well-oiled machine. The custom scheduling system he built has eliminated all my double-booking nightmares.",
-    image: "/api/placeholder/600/400"
+    }
   },
   {
     id: "research-automation",
@@ -43,9 +41,7 @@ export const caseStudies = [
       timeSaved: "8 hours/week",
       efficiency: "50%",
       satisfaction: "98%"
-    },
-    testimonial: "The research automation system Mohammed created has revolutionized how I prepare my weekly reports. What used to take me 16 hours now takes just 8.",
-    image: "/api/placeholder/600/400"
+    }
   },
   {
     id: "client-onboarding",
@@ -67,9 +63,7 @@ export const caseStudies = [
       timeSaved: "11 days per client",
       efficiency: "85%",
       satisfaction: "100%"
-    },
-    testimonial: "Our client onboarding used to be a nightmare. Now it's our competitive advantage thanks to Mohammed's system.",
-    image: "/api/placeholder/600/400"
+    }
   }
 ];
 

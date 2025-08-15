@@ -7,8 +7,10 @@ import {
   BuildingOfficeIcon, 
   GlobeAltIcon 
 } from '@heroicons/react/24/outline';
+import { CodeBlock } from '../ui/code-block';
 
 import Me from '../../assets/me.jpg';
+
 
 const iconMap = {
   'chart-bar': ChartBarIcon,
@@ -18,6 +20,15 @@ const iconMap = {
 };
 
 export default function AboutSection() {
+  const codeBlockContext = `
+  ### Skills
+  - Project Management
+  - Virtual Assistance
+  - Computer Science
+  - Customer Support
+  - Data Entry
+  - Social Media Management
+  `
   return (
     <section id="about" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,6 +102,8 @@ export default function AboutSection() {
                 {paragraph}
               </motion.p>
             ))}
+
+            <CodeBlock language="markdown" code={codeBlockContext} filename="skills.md" />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

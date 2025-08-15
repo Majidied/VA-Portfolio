@@ -167,20 +167,6 @@ export default function CaseStudiesSection() {
                       ))}
                     </div>
                   </div>
-
-                  {/* Testimonial */}
-                  <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border-l-4 border-blue-600">
-                    <div className="flex items-start">
-                      <div className="flex text-yellow-400 mr-3 mt-1">
-                        {[...Array(5)].map((_, i) => (
-                          <StarIcon key={i} className="h-4 w-4 fill-current" />
-                        ))}
-                      </div>
-                    </div>
-                    <p className="text-gray-700 dark:text-gray-200 italic mt-2">
-                      "{currentStudy.testimonial}"
-                    </p>
-                  </div>
                 </div>
 
                 {/* Metrics Side */}
