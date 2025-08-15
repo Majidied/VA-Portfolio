@@ -392,7 +392,7 @@ function drawPlanet(ctx: CanvasRenderingContext2D, p: Planet, w: number, h: numb
     }
 }
 
-function handleComets(ctx: CanvasRenderingContext2D, w: number, h: number, t: number, speed: number, state: CometState, mouse: MousePosition, hue: number): void {
+function handleComets(ctx: CanvasRenderingContext2D, w: number, h: number, _t: number, speed: number, state: CometState, _mouse: MousePosition, hue: number): void {
     const now = nowMs();
     if (!state.active && now > state.next) {
         const fromTop = Math.random() < 0.5;
