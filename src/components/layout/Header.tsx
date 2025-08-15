@@ -51,7 +51,7 @@ export default function Header() {
             whileHover={{ scale: 1.05 }}
           >
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-gray-900 dark:text-white">
+              <span className="text-xl font-bold text-gray-400 dark:text-white">
                 {personalInfo.name}
               </span>
               <span className="text-sm text-blue-600 dark:text-blue-400">

@@ -55,7 +55,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-sm font-medium mb-6"
+                className="inline-flex items-center px-4 py-2 rounded-full bg-blue-900 dark:bg-blue-900 text-blue-300 dark:text-blue-300 text-sm font-medium mb-6"
               >
                 <CheckIcon className="h-4 w-4 mr-2" />
                 Available for New Projects
@@ -66,11 +66,11 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6"
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-100 dark:text-white leading-tight mb-6"
               >
                 {personalInfo.tagline.split(" — ")[0]}
                 <PointerHighlight>
-                  <span className="block text-blue-600 dark:text-blue-400 z-20">
+                  <span className="block text-blue-400 dark:text-blue-400 z-20">
                     — {personalInfo.tagline.split(" — ")[1]}
                   </span>
                 </PointerHighlight>
@@ -80,7 +80,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed"
+                className="text-xl text-gray-100 dark:text-gray-100 mb-8 leading-relaxed"
               >
                 {personalInfo.subtagline}
               </motion.p>
