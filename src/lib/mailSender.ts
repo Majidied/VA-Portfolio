@@ -194,6 +194,7 @@ export const sendNewsletterSubscription = async (
       subscriber_name: subscriptionData.name || 'Subscriber',
       interests: subscriptionData.interests?.join(', ') || 'General updates',
       subject: 'Newsletter Subscription Confirmation',
+      templateId: 'newsletter_template',
     };
 
     return await sendEmail(templateParams, 'newsletter_template');
@@ -212,6 +213,7 @@ export const sendAutoReply = async (userEmail: string, userName: string): Promis
     const templateParams = {
       to_email: userEmail,
       user_name: userName,
+      templateId: 'template_zje9j4n',
       subject: 'Thank you for contacting us!',
       reply_message: `
         Dear ${userName},
