@@ -9,6 +9,8 @@ import {
 } from '@heroicons/react/24/outline';
 import { personalInfo } from '../../content/general';
 import { availability } from '../../content/availability';
+import { useEmail } from '../../hooks/useEmail';
+import MiniLoading from '../common/MiniLoading';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -18,10 +20,9 @@ export default function ContactSection() {
     message: '',
     hoursPerWeek: '',
     pricePerHour: '',
-
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const { loading, success, error, sendContactEmail, resetState } = useEmail();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -30,24 +31,39 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    
+    // Reset any previous state
+    resetState();
+    
+    // Prepare email data
+    const emailData = {
+      name: formData.name,
+      email: formData.email,
+      company: formData.company,
+      message: formData.message,
+      subject: `VA Services Inquiry from ${formData.name}`,
+      // Additional project details
+      projectType: `${formData.hoursPerWeek} hours per week at $${formData.pricePerHour}/hour`,
+      budget: formData.pricePerHour ? `$${formData.pricePerHour}/hour` : 'To be discussed',
+      timeline: formData.hoursPerWeek || 'To be discussed',
+    };
 
     try {
-      // Simulate form submission - replace with actual form handler
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        message: '',
-        hoursPerWeek: '',
-        pricePerHour: '',
-      });
+      const response = await sendContactEmail(emailData);
+      
+      if (response.success) {
+        // Clear form data on success
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          message: '',
+          hoursPerWeek: '',
+          pricePerHour: '',
+        });
+      }
     } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
+      console.error('Error sending email:', error);
     }
   };
 
@@ -83,7 +99,7 @@ export default function ContactSection() {
               Start Your Free Consultation
             </h3>
 
-            {submitStatus === 'success' && (
+            {success && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -96,14 +112,14 @@ export default function ContactSection() {
                       Message sent successfully!
                     </h4>
                     <p className="text-green-700 dark:text-green-300 text-sm mt-1">
-                      I'll get back to you within 24 hours.
+                      I'll get back to you within 24 hours. You should also receive a confirmation email shortly.
                     </p>
                   </div>
                 </div>
               </motion.div>
             )}
 
-            {submitStatus === 'error' && (
+            {error && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -113,10 +129,10 @@ export default function ContactSection() {
                   <ExclamationTriangleIcon className="h-5 w-5 text-red-500 mr-3 mt-0.5" />
                   <div>
                     <h4 className="text-red-800 dark:text-red-200 font-medium">
-                      Something went wrong
+                      Message failed to send
                     </h4>
                     <p className="text-red-700 dark:text-red-300 text-sm mt-1">
-                      Please try again or contact me directly via email.
+                      {error}
                     </p>
                   </div>
                 </div>
@@ -235,16 +251,17 @@ export default function ContactSection() {
 
               <motion.button
                 type="submit"
-                disabled={isSubmitting}
-                className={`w-full py-4 px-6 rounded-lg font-semibold text-lg transition-colors duration-200 ${
-                  isSubmitting
+                disabled={loading}
+                className={`w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-200 flex items-center justify-center gap-3 ${
+                  loading
                     ? 'bg-gray-400 cursor-not-allowed text-white'
                     : 'bg-blue-600 hover:bg-blue-700 text-white'
                 }`}
-                whileHover={!isSubmitting ? { scale: 1.02 } : {}}
-                whileTap={!isSubmitting ? { scale: 0.98 } : {}}
+                whileHover={!loading ? { scale: 1.02 } : {}}
+                whileTap={!loading ? { scale: 0.98 } : {}}
               >
-                {isSubmitting ? 'Sending...' : 'Send Message & Book Consultation'}
+                {loading && <MiniLoading size="sm" color="white" />}
+                {loading ? 'Sending...' : 'Send Message & Book Consultation'}
               </motion.button>
             </form>
           </motion.div>
