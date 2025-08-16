@@ -213,7 +213,6 @@ export const sendAutoReply = async (userEmail: string, userName: string): Promis
     const templateParams = {
       to_email: userEmail,
       user_name: userName,
-      templateId: 'template_zje9j4n',
       subject: 'Thank you for contacting us!',
       reply_message: `
         Dear ${userName},
@@ -228,7 +227,7 @@ export const sendAutoReply = async (userEmail: string, userName: string): Promis
       `,
     };
 
-    return await sendEmail(templateParams, 'auto_reply_template');
+    return await sendEmail(templateParams, 'template_zje9j4n');
   } catch (error: any) {
     return {
       success: false,
