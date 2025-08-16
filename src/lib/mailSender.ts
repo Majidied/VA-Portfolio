@@ -4,7 +4,7 @@ import emailjs from 'emailjs-com';
 const EMAILJS_CONFIG = {
   serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'your_service_id',
   templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'your_template_id',
-  userId: import.meta.env.VITE_EMAILJS_USER_ID || 'your_user_id',
+  userId: import.meta.env.VITE_EMAILJS_USER_ID || 'F_DZ8hE4OlklvQm8x',
   accessToken: import.meta.env.VITE_EMAILJS_ACCESS_TOKEN || 'your_access_token',
 };
 
