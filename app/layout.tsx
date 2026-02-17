@@ -18,11 +18,11 @@ const _geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://mohammedmajidi.engineer'),
   title: {
-    default: 'Mohammed Majidi | Systems-First Virtual Assistant',
+    default: 'Mohammed Majidi | Systems-First Virtual Assistant & EA',
     template: '%s | Mohammed Majidi',
   },
   description:
-    'High-Level Executive Support — Powered by Custom Systems. Precision administrative support and custom-built automation to help founders and executives scale their impact, not their task list.',
+    'High-Level Executive Support — Powered by Custom Systems. Precision administrative support and automation to help founders scale their impact.',
   keywords: [
     'virtual assistant',
     'executive support',
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://mohammedmajidi.engineer',
-    title: 'Mohammed Majidi | Systems-First Virtual Assistant',
+    title: 'Mohammed Majidi | Systems-First Virtual Assistant & EA',
     description:
-      'High-Level Executive Support — Powered by Custom Systems. Precision administrative support and custom-built automation to help founders and executives scale their impact.',
+      'High-Level Executive Support — Powered by Custom Systems. Precision administrative support and automation to help founders scale their impact.',
     siteName: 'Mohammed Majidi',
     images: [
       {
@@ -54,9 +54,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mohammed Majidi | Systems-First Virtual Assistant',
+    title: 'Mohammed Majidi | Systems-First Virtual Assistant & EA',
     description:
-      'High-Level Executive Support — Powered by Custom Systems. Precision administrative support and custom-built automation.',
+      'High-Level Executive Support — Powered by Custom Systems. Precision administrative support and automation to help founders scale their impact.',
     images: ['/hero-illustration.png'],
   },
   robots: {
