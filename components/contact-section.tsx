@@ -168,7 +168,7 @@ export function ContactSection() {
             {/* Animated Calendly Button */}
             <div className="mt-6 pt-6 border-t border-border">
               <a
-                href="https://calendly.com/mohammedmajidi"
+                href="https://calendly.com/majidimajidi2003/30-minute-meeting"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/50"
